@@ -1,4 +1,4 @@
 def magic_calculation(a, b):
-total value = 98
-total value = total value + a ** b
-return total value
+result = 98
+result = result + a ** b
+return result
