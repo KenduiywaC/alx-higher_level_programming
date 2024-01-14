@@ -193,9 +193,9 @@ class Base:
                 `dictionary` as keyword args
 
         """
-        if cls.__name__ is 'Rectangle':
+        if cls.__name__ == 'Rectangle':
             temp = cls(1, 1)
-        elif cls.__name__ is 'Square':
+        elif cls.__name__ == 'Square':
             temp = cls(1)
         temp.update(**dictionary)
         return temp
