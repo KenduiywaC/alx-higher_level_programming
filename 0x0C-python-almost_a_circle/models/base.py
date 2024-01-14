@@ -52,21 +52,11 @@ class Base:
             Base.__assigned_ids.add(self.id)
 
     def draw(list_rectangles, list_squares):
-        """ Draw rectangles and squares """
-        import turtle
-
-        turtle.clear()
-        turtle.title("Drawing Rectangles and Squares")
-        turtle.bgcolor("white")
-        turtle.speed(2)
-
+        """Draw a list of rectangles and squares."""
         for rect in list_rectangles:
-            rect.draw()
-
+            print(rect)
         for square in list_squares:
-            square.draw()
-
-        turtle.exitonclick()
+            print(square)
 
     @property
     def id(self):
