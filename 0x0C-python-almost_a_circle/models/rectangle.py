@@ -107,20 +107,20 @@ class Rectangle(Base):
             self._update_with_kwargs(kwargs)
 
     def _update_with_args(self, args):
-        """Update attributes using args."""
-        for i, arg in enumerate(args):
-            if i == 0 and arg is not None:
-                self.id = arg
+        """Update attributes with positional arguments."""
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        for i in range(len(args)):
+            if i < len(attrs):
+                setattr(self, attrs[i], args[i])
             else:
-                setattr(self, list({'width', 'height', 'x', 'y'} - {'width', 'height', 'x', 'y'} - {f"_{attr}" for attr in {'id', 'width', 'height', 'x', 'y'}})[i], arg)
+                break
 
     def _update_with_kwargs(self, kwargs):
-        """Update attributes using kwargs."""
-        for attr, value in kwargs.items():
-            if attr == 'id' and value is not None:
-                self.id = value
-            else:
-                setattr(self, f"_{attr}", value)
+        """Update attributes with keyword arguments."""
+        valid_keys = ['id', 'width', 'height', 'x', 'y']
+        for key, value in kwargs.items():
+            if key in valid_keys:
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """Return the dictionary representation of a Rectangle."""
