@@ -20,3 +20,21 @@ __tablename__ = "states"
 
 id = Column(Integer, primary_key=True)
 name = Column(String(128), nullable=False)
+
+def my_function():
+"""This is a standalone function."""
+pass
+class MyClass:
+"""This is a class with a function."""
+def my_function(self):
+"""This is a function inside MyClass."""
+pass
+
+if __name__ == "__main__":
+print(__doc__)  # Module docstring
+print(State.__doc__)  # Class docstring
+print(State.__tablename__)  # Attribute docstring
+print(State.id.__doc__)  # Attribute docstring
+print(State.name.__doc__)  # Attribute docstring
+print(my_function.__doc__)  # Function docstring
+print(MyClass.my_function.__doc__)  # Function docstring

@@ -22,3 +22,25 @@ name = Column(String(128), nullable=False)
 state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
 
 state = relationship("State", back_populates="cities")
+
+def my_function():
+"""This is a standalone function."""
+pass
+
+class MyClass:
+"""This is a class with a function."""
+
+def my_function(self):
+"""This is a function inside MyClass."""
+pass
+
+if __name__ == "__main__":
+print(__doc__)  # Module docstring
+print(City.__doc__)  # Class docstring
+print(City.__tablename__)  # Attribute docstring
+print(City.id.__doc__)  # Attribute docstring
+print(City.name.__doc__)  # Attribute docstring
+print(City.state_id.__doc__)  # Attribute docstring
+print(City.state.__doc__)  # Attribute docstring
+print(my_function.__doc__)  # Function docstring
+print(MyClass.my_function.__doc__)  # Function docstring
